@@ -10,3 +10,15 @@ D:\mepowerlmay\WinStockFinder\WinStockFinder.DAL\obj\Debug\WinStockFinder.DAL.cs
 D:\mepowerlmay\WinStockFinder\WinStockFinder.DAL\obj\Debug\WinStockFinder.DAL.csproj.CopyComplete
 D:\mepowerlmay\WinStockFinder\WinStockFinder.DAL\obj\Debug\WinStockFinder.DAL.dll
 D:\mepowerlmay\WinStockFinder\WinStockFinder.DAL\obj\Debug\WinStockFinder.DAL.pdb
+D:\mepowerlmay\WinStockFinder2\WinStockFinder.DAL\bin\Debug\WinStockFinder.DAL.dll
+D:\mepowerlmay\WinStockFinder2\WinStockFinder.DAL\bin\Debug\WinStockFinder.DAL.pdb
+D:\mepowerlmay\WinStockFinder2\WinStockFinder.DAL\bin\Debug\Dapper.dll
+D:\mepowerlmay\WinStockFinder2\WinStockFinder.DAL\bin\Debug\WinStockFinder.Model.dll
+D:\mepowerlmay\WinStockFinder2\WinStockFinder.DAL\bin\Debug\WinStockFinder.Model.pdb
+D:\mepowerlmay\WinStockFinder2\WinStockFinder.DAL\bin\Debug\Dapper.pdb
+D:\mepowerlmay\WinStockFinder2\WinStockFinder.DAL\bin\Debug\Dapper.xml
+D:\mepowerlmay\WinStockFinder2\WinStockFinder.DAL\obj\Debug\WinStockFinder.DAL.csprojAssemblyReference.cache
+D:\mepowerlmay\WinStockFinder2\WinStockFinder.DAL\obj\Debug\WinStockFinder.DAL.csproj.CoreCompileInputs.cache
+D:\mepowerlmay\WinStockFinder2\WinStockFinder.DAL\obj\Debug\WinStockFinder.DAL.csproj.CopyComplete
+D:\mepowerlmay\WinStockFinder2\WinStockFinder.DAL\obj\Debug\WinStockFinder.DAL.dll
+D:\mepowerlmay\WinStockFinder2\WinStockFinder.DAL\obj\Debug\WinStockFinder.DAL.pdb

@@ -65,9 +65,6 @@
 <script>
 
 
-    $(document).ready(function () {
-        loadData();
-    });
 
 
   
@@ -83,8 +80,8 @@
 
         var postdata = getcond();
 
-      var url =  @Url.Action("Index", "Twstock");
-
+      var url =  '@Url.Action("Index", "Twstock")';
+        debugger;
         $.post(url, postdata, function (json) {
            
 
@@ -130,6 +127,12 @@
         var postdata = { chDate: chDate, chDays: chDays, chStock: chStock };
         return postdata;
     }
+
+
+
+    $(document).ready(function () {
+        loadData();
+    });
 
 
 </script>

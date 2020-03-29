@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinStockFinder.Model", "Win
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebStockFinder", "WebStockFinder\WebStockFinder.csproj", "{79756A5C-A459-4910-8973-0920F7421651}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlonsoAdoNET", "..\AlonsoProject\AlonsoAdoNET\AlonsoAdoNET.csproj", "{1D4301CE-1F1D-4CC4-B966-6D0767742EA4}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{79756A5C-A459-4910-8973-0920F7421651}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79756A5C-A459-4910-8973-0920F7421651}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79756A5C-A459-4910-8973-0920F7421651}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1D4301CE-1F1D-4CC4-B966-6D0767742EA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1D4301CE-1F1D-4CC4-B966-6D0767742EA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1D4301CE-1F1D-4CC4-B966-6D0767742EA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1D4301CE-1F1D-4CC4-B966-6D0767742EA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

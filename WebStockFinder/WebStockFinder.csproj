@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Alonso.Utility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Alonso.Utility\Alonso.Utility\bin\Debug\Alonso.Utility.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -158,10 +162,6 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\AlonsoProject\AlonsoAdoNET\AlonsoAdoNET.csproj">
-      <Project>{1d4301ce-1f1d-4cc4-b966-6d0767742ea4}</Project>
-      <Name>AlonsoAdoNET</Name>
-    </ProjectReference>
     <ProjectReference Include="..\WinStockFinder.DAL\WinStockFinder.DAL.csproj">
       <Project>{5fd0417c-fa94-47c9-b0ca-601caa5a9ee8}</Project>
       <Name>WinStockFinder.DAL</Name>

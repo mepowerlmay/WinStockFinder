@@ -1,4 +1,4 @@
-﻿using AlonsoAdoNET;
+﻿using Alonso.Utility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -67,8 +67,10 @@ namespace WebStockFinder.Controllers
             var result2 = dal.GetListArray(cond2);
             var result3 = dal.GetListArray(cond3);
 
+     
+
             int iDays = Convert.ToInt32(chDays);
-            DateTime tempRange = DateTime.Now.AddDays(iDays * -1);
+            DateTime tempRange = DateTime.Parse(TypeChange.ChineseToWestSDate(chDate)).AddDays(iDays * -1);
             string stempRange = (tempRange.Year - 1911).ToString() + tempRange.ToString("MMdd");
 
             foreach (var item in result1)
