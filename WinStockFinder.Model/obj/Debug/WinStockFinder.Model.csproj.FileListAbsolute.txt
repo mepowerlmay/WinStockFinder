@@ -1,0 +1,6 @@
+D:\mepowerlmay\WinStockFinder\WinStockFinder.Model\bin\Debug\WinStockFinder.Model.dll
+D:\mepowerlmay\WinStockFinder\WinStockFinder.Model\bin\Debug\WinStockFinder.Model.pdb
+D:\mepowerlmay\WinStockFinder\WinStockFinder.Model\obj\Debug\WinStockFinder.Model.csproj.CoreCompileInputs.cache
+D:\mepowerlmay\WinStockFinder\WinStockFinder.Model\obj\Debug\WinStockFinder.Model.dll
+D:\mepowerlmay\WinStockFinder\WinStockFinder.Model\obj\Debug\WinStockFinder.Model.pdb
+D:\mepowerlmay\WinStockFinder\WinStockFinder.Model\obj\Debug\WinStockFinder.Model.csprojAssemblyReference.cache

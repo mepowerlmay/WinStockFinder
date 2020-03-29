@@ -1,0 +1,104 @@
+﻿<script src="~/Scripts/jquery-1.9.1.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/My97DatePicker/WdatePicker.js"></script>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/My97DatePicker/skin/WdatePicker.css" rel="stylesheet" />
+
+<h3>股票查詢作業</h3>
+<h3>主要查詢可能是黑馬的股票</h3>
+
+
+<button type="button" class="btn btn-primary" onclick="loadData();">查詢</button>
+
+<table class="table table-bordered ">
+    <thead>
+        <tr>
+            <th>管理</th>
+
+            <th>日期</th>
+            <th>收盤價</th>
+            <th>漲跌幅</th>
+            <th>交易數量</th>
+            <th>交易金額</th>
+            <th>開盤價</th>
+            <th>最高價</th>
+            <th>最低價</th>
+            <th>股票代號</th>
+
+        </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+</table>
+
+
+<script>
+
+
+    $(document).ready(function () {
+        loadData();
+    });
+
+
+
+
+
+    //Load Data function
+    function loadData() {
+
+
+
+
+
+
+        var postdata = getcond();
+
+      var url =  '@Url.Action("Index", "FDHS")';
+
+        $.post(url, postdata, function (json) {
+
+
+            var html = '';
+            $.each(json, function (i, item) {
+                // console.log("第" + i + "个元素：");
+                //  console.log(blog);
+                html += '<tr>';
+                html += '    <td>';
+           //     html += '        <a href="/Adnn1n/Twstock/Add/' + item.id + '"><i class="layui-icon">&#xe642;</i> 编辑</a>';
+                //html += '        <a href="javascript:void(0);" onclick="del(' + item.id + ')"><i class="layui-icon">&#x1006;</i> 删除</a>';
+                html += '    </td>';
+
+                html += '    <td>' + item.chDate + '</td>';
+                html += '    <td>' + item.ClosePrice + '</td>';
+                html += '    <td>' + item.UpOrDown + '</td>';
+                html += '    <td>' + item.TradeCount + '</td>';
+                html += '    <td>' + item.TradeMoney + '</td>';
+                html += '    <td>' + item.OpenPrice + '</td>';
+                html += '    <td>' + item.HightPrice + '</td>';
+                html += '    <td>' + item.LowPrice + '</td>';
+                html += '    <td>' + item.StockCode + '</td>';
+
+
+                html += '</tr>';
+
+            })
+
+            $('#tbody').html(html);
+
+        }, 'json');
+
+
+    }
+
+    /*拼接条件返回postdata*/
+    function getcond() {
+
+        var chDate = $("#chDate").val();
+        var chDays = $("#chDays").val();
+        var chStock = $("#chStock").val();
+        var postdata = { chDate: chDate, chDays: chDays, chStock: chStock };
+        return postdata;
+    }
+
+
+</script>
+

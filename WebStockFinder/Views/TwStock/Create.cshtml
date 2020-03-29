@@ -1,0 +1,163 @@
+﻿
+@model WinStockFinder.Model.Twstock
+@{
+    // ViewBag.Title = Model.id == 0 ? "新增Twstock" : "编辑Twstock";
+}
+
+
+<script src="~/Scripts/jquery-1.9.1.min.js"></script>
+<script src="https://cdn.90so.net/layui/2.4.5/layui.all.js"></script>
+<link href="https://cdn.90so.net/layui/2.4.5/css/layui.css" rel="stylesheet" />
+
+
+<div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+    <ul class="layui-tab-title">
+        <li class="layui-this">@ViewBag.Title</li>
+    </ul>
+</div>
+<form class="layui-form" action="">
+    <div class='layui-form'>
+        <table class='layui-table'>
+            <tr>
+                <th>Id</th>
+                <td>
+                    @Html.TextBoxFor(a => a.Id, new { @class = "layui-input", lay_verify = "required" })
+                </td>
+                <th>chDate</th>
+                <td>
+                    @Html.TextBoxFor(a => a.chDate, new { @class = "layui-input", lay_verify = "required" })
+                </td>
+            </tr>
+            <tr>
+                <th>ClosePrice</th>
+                <td>
+                    @Html.TextBoxFor(a => a.ClosePrice, new { @class = "layui-input", lay_verify = "required" })
+                </td>
+                <th>UpOrDown</th>
+                <td>
+                    @Html.TextBoxFor(a => a.UpOrDown, new { @class = "layui-input", lay_verify = "required" })
+                </td>
+            </tr>
+            <tr>
+                <th>TradeCount</th>
+                <td>
+                    @Html.TextBoxFor(a => a.TradeCount, new { @class = "layui-input", lay_verify = "required" })
+                </td>
+                <th>TradeMoney</th>
+                <td>
+                    @Html.TextBoxFor(a => a.TradeMoney, new { @class = "layui-input", lay_verify = "required" })
+                </td>
+            </tr>
+            <tr>
+                <th>OpenPrice</th>
+                <td>
+                    @Html.TextBoxFor(a => a.OpenPrice, new { @class = "layui-input", lay_verify = "required" })
+                </td>
+                <th>HightPrice</th>
+                <td>
+                    @Html.TextBoxFor(a => a.HightPrice, new { @class = "layui-input", lay_verify = "required" })
+                </td>
+            </tr>
+            <tr>
+                <th>LowPrice</th>
+                <td>
+                    @Html.TextBoxFor(a => a.LowPrice, new { @class = "layui-input", lay_verify = "required" })
+                </td>
+                <th>StockCode</th>
+                <td>
+                    @Html.TextBoxFor(a => a.StockCode, new { @class = "layui-input", lay_verify = "required" })
+                </td>
+            </tr>
+            <tr>
+                <th>CreateDate</th>
+                <td>
+                    @Html.TextBoxFor(a => a.CreateDate, new { @class = "layui-input", lay_verify = "required" })
+                </td>
+                <th></th>
+                <td></td>
+            </tr>
+        </table>
+
+
+        <div class="layui-form-item">
+            <label class='layui-form-label'>&nbsp;</label>
+            <div class="layui-input-inline">
+                <button id="btn1" class="layui-btn" lay-submit="" lay-filter="demo1">@ViewBag.Title</button>
+                @Html.AntiForgeryToken()
+                
+            </div>
+        </div>
+    </div>
+</form>
+<link rel="stylesheet" href="/content/kindeditor/themes/default/default.css" />
+<link rel="stylesheet" href="/content/kindeditor/plugins/code/prettify.css" />
+<script src="/content/kindeditor/kindeditor-all-min.js"></script>
+<script charset="utf-8" src="/content/kindeditor/lang/zh-CN.js"></script>
+<script charset="utf-8" src="/content/kindeditor/plugins/code/prettify.js"></script>
+<script>
+    var pop_index;
+    var editor1;
+    KindEditor.ready(function (K) {
+        editor1 = K.create('#body', {
+            cssPath: '/content/kindeditor/plugins/code/prettify.css',
+            uploadJson: '/Adnn1n/Home/KE_Upload',
+            afterCreate: function () {
+                var self = this;
+                K.ctrl(document, 13, function () {
+                    self.sync();
+                    K('form[name=form1]')[0].submit();
+                });
+                K.ctrl(self.edit.doc, 13, function () {
+                    self.sync();
+                    K('form[name=form1]')[0].submit();
+                });
+            }
+        });
+        prettyPrint();
+    });
+
+    /*加载layui编辑器*/
+    layui.use(['form', 'layer', 'laydate', 'upload'], function () {
+        var form = layui.form;
+        var laydate = layui.laydate;
+        var upload = layui.upload;
+        var layer = layui.layer;
+        var $ = layui.jquery;
+
+
+        var uploadInst = upload.render({
+            elem: '#btnimg',
+            url: '/Adnn1n/Home/ImgUpload' //上传接口
+            , done: function (res) { //上传成功后的回调
+                // console.log(res);
+                document.getElementById("img1").src = res.data.src;
+                document.getElementById("img").value = res.data.src;    //这里的img对应表中的字段，有可能是face也有可能是logo
+            }
+        });
+
+
+
+        //监听提交
+        form.on('submit(demo1)', function (data) {
+            var url = "/adnn1n/Twstock/add";
+            var postdata = data.field;
+            //postdata.body = editor1.html();
+
+            $('#btn1').attr("class", "layui-btn layui-btn-disabled");
+            $('#btn1').attr("disabled", "disabled");
+
+            pop_index = layer.load(0, {
+                shade: [0.3, '#000'] //0.1透明度的白色背景
+            });
+            $.post(url, postdata, function (data) {
+                layer.close(pop_index);
+                if (data.code == 0) {
+                    layer.msg(data.msg, function () { location.href = "/adnn1n/Twstock/"; })
+                } else {
+                    layer.msg(data.msg);
+                }
+            }, 'json')
+            return false;
+        });
+
+    });</script>

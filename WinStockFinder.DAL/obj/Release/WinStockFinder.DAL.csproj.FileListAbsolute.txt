@@ -1,0 +1,12 @@
+D:\mepowerlmay\WinStockFinder\WinStockFinder.DAL\bin\Release\WinStockFinder.DAL.dll
+D:\mepowerlmay\WinStockFinder\WinStockFinder.DAL\bin\Release\WinStockFinder.DAL.pdb
+D:\mepowerlmay\WinStockFinder\WinStockFinder.DAL\bin\Release\Dapper.dll
+D:\mepowerlmay\WinStockFinder\WinStockFinder.DAL\bin\Release\WinStockFinder.Model.dll
+D:\mepowerlmay\WinStockFinder\WinStockFinder.DAL\bin\Release\WinStockFinder.Model.pdb
+D:\mepowerlmay\WinStockFinder\WinStockFinder.DAL\bin\Release\Dapper.pdb
+D:\mepowerlmay\WinStockFinder\WinStockFinder.DAL\bin\Release\Dapper.xml
+D:\mepowerlmay\WinStockFinder\WinStockFinder.DAL\obj\Release\WinStockFinder.DAL.csprojAssemblyReference.cache
+D:\mepowerlmay\WinStockFinder\WinStockFinder.DAL\obj\Release\WinStockFinder.DAL.csproj.CoreCompileInputs.cache
+D:\mepowerlmay\WinStockFinder\WinStockFinder.DAL\obj\Release\WinStockFinder.DAL.csproj.CopyComplete
+D:\mepowerlmay\WinStockFinder\WinStockFinder.DAL\obj\Release\WinStockFinder.DAL.dll
+D:\mepowerlmay\WinStockFinder\WinStockFinder.DAL\obj\Release\WinStockFinder.DAL.pdb
