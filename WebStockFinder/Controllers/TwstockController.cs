@@ -42,8 +42,8 @@ namespace WebStockFinder.Controllers
             whereClausesBuilder.appendCriteriaText(chDate, " chDate = '{0}'", ref where);
             whereClausesBuilder.appendCriteriaText(chStock, " chStock = '{0}'", ref where);
             whereClausesBuilder.appendCriteriaText(chStock, " chStock = '{0}'", ref where);
-            string cond1 = where + "  and  ClosePrice > 90 and  ClosePrice < 101 ";
-            string cond2 = where + "  and  ClosePrice > 170 and  ClosePrice < 201 ";
+            string cond1 = where + "  and  ClosePrice > 50 and  ClosePrice < 101 ";
+            string cond2 = where + "  and  ClosePrice > 150 and  ClosePrice < 201 ";
             string cond3 = where + "  and  ClosePrice > 250 and  ClosePrice < 301 ";
             var result1 = TwstockDAL.GetListArray(cond1);
             var result2 = TwstockDAL.GetListArray(cond2);

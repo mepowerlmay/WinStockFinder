@@ -1,49 +1,29 @@
-﻿
-<script src="~/Scripts/jquery-1.9.1.min.js"></script>
+﻿<script src="~/Scripts/jquery-1.9.1.min.js"></script>
 <script src="~/Scripts/bootstrap.min.js"></script>
 <script src="~/My97DatePicker/WdatePicker.js"></script>
 <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
 <link href="~/My97DatePicker/skin/WdatePicker.css" rel="stylesheet" />
-
-
-
-
 <h3>股票查詢作業</h3>
 <div class="form-inline">
     <div class="form-group">
-        <label >日期</label>
+        <label>日期</label>
         <input type="text" class="form-control" id="chDate" name="chDate" onclick="WdatePicker({el:this,dateFmt:'yyyMMdd'})">
     </div>
-
-
     <div class="form-group">
-        <label >天數</label>
+        <label>天數</label>
         <input type="text" class="form-control" id="chDays" name="chDays">
     </div>
-
     <div class="form-group">
         <label>股號</label>
-        <input type="text" class="form-control" id="chStock" name="chStock" >
+        <input type="text" class="form-control" id="chStock" name="chStock">
     </div>
-
-
-
-    <button type="button" class="btn btn-primary" onclick="loadData();">查詢</button>
-
-
+    <button id="btnsubmit" type="button" class="btn btn-primary" onclick="loadData();">查詢</button>
 </div>
-
-
 <br />
-
-
-
-
 <table class="table table-bordered ">
     <thead>
         <tr>
             <th>管理</th>
-       
             <th>chDate</th>
             <th>ClosePrice</th>
             <th>UpOrDown</th>
@@ -54,36 +34,23 @@
             <th>LowPrice</th>
             <th>StockCode</th>
             <th>CreateDate</th>
-
-
         </tr>
     </thead>
     <tbody id="tbody"></tbody>
 </table>
-
-
 <script>
-
-
-
-
-  
-
 
     //Load Data function
     function loadData() {
 
-   
-
-     
-
-
+      
+        var btn = $("#btnsubmit");
+        btn .attr('disabled', true);
+        btn.text('資料讀取中....');
         var postdata = getcond();
-
-      var url =  '@Url.Action("Index", "Twstock")';
+        var url =  '@Url.Action("Index", "Twstock")';
         debugger;
         $.post(url, postdata, function (json) {
-           
 
             var html = '';
             $.each(json, function (i, item) {
@@ -91,10 +58,9 @@
                 //  console.log(blog);
                 html += '<tr>';
                 html += '    <td>';
-           //     html += '        <a href="/Adnn1n/Twstock/Add/' + item.id + '"><i class="layui-icon">&#xe642;</i> 编辑</a>';
+           //   html += '        <a href="/Adnn1n/Twstock/Add/' + item.id + '"><i class="layui-icon">&#xe642;</i> 编辑</a>';
                 //html += '        <a href="javascript:void(0);" onclick="del(' + item.id + ')"><i class="layui-icon">&#x1006;</i> 删除</a>';
                 html += '    </td>';
-           
                 html += '    <td>' + item.chDate + '</td>';
                 html += '    <td>' + item.ClosePrice + '</td>';
                 html += '    <td>' + item.UpOrDown + '</td>';
@@ -105,35 +71,22 @@
                 html += '    <td>' + item.LowPrice + '</td>';
                 html += '    <td>' + item.StockCode + '</td>';
                 html += '    <td>' + item.CreateDate + '</td>';
-
-
                 html += '</tr>';
-
             })
-
             $('#tbody').html(html);
-
-        }, 'json');     
-
-
+            btn.attr('disabled', false);
+            btn.text('查詢');
+        }, 'json');
     }
-
     /*拼接条件返回postdata*/
     function getcond() {
-
         var chDate = $("#chDate").val();
         var chDays = $("#chDays").val();
         var chStock = $("#chStock").val();
         var postdata = { chDate: chDate, chDays: chDays, chStock: chStock };
         return postdata;
     }
-
-
-
     $(document).ready(function () {
         loadData();
     });
-
-
 </script>
-
