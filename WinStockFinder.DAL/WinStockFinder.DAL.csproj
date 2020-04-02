@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectionFactory.cs" />
+    <Compile Include="FutureStockDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TwstockDAL.cs" />
   </ItemGroup>

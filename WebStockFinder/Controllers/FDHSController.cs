@@ -33,21 +33,12 @@ namespace WebStockFinder.Controllers
         public JsonResult Index(string chDate, string chDays, string chStock)
         {
 
-//            策略11.最低價格的日期往後抓 價格
-
-//假設1 / 2價格為10 那麼1/ 2 之後的max價格一定要 > 10 ，相除最好有100 % 以上
-
-
-//1 / 2之後的價格 = 20(除法)  1 / 2價格 = 10    =>>> 100 %
-
-
-//      股票的最低價 = 6 ~29  的股票要有50 % 漲幅
-
-//股票的最低價 = 30  ~60 的股票要有  50 % 漲幅
-
-//股票的最低價 = 60~100 的股票 要有30% 的漲幅
-
-
+            //策略11.最低價格的日期往後抓 價格
+            //假設1 / 2價格為10 那麼1/ 2 之後的max價格一定要 > 10 ，相除最好有100 % 以上
+            //1 / 2之後的價格 = 20(除法)  1 / 2價格 = 10    =>>> 100 %
+            //股票的最低價 = 6 ~29  的股票要有50 % 漲幅
+            //股票的最低價 = 30  ~49 的股票要有  50 % 漲幅
+            //股票的最低價 = 50~100 的股票 要有30% 的漲幅
 
             chDate = (DateTime.Now.Year - 1911).ToString() + DateTime.Now.ToString("MMdd");
             string bf360Days = (DateTime.Now.AddDays(-360).Year - 1911).ToString() + DateTime.Now.ToString("MMdd");
